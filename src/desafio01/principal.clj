@@ -33,7 +33,7 @@
        (calcula-gastos-totais-por-categoria)
        (pprint)))
 
-;agrupa-por-categoria cliente01)
+(agrupa-por-categoria cliente01)
 
 ;FATURA DO MES
 (defn mes-desejado? [compra periodo]
@@ -59,7 +59,7 @@
         valor (:valor compra)]
     (if (string? filtro)
       (= estabelecimento filtro)
-      (> valor filtro))))
+      (>= valor filtro))))
 
 (defn aplica-filtro [compras filtro]
   (filter #(corresponde? % filtro) compras))
@@ -70,7 +70,7 @@
       (pprint))
   )
 
-(busca-compras cliente01 300M)
+(busca-compras cliente01 545M)
 
 
 
