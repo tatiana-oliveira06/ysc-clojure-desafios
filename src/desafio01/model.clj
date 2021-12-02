@@ -7,6 +7,8 @@
 
 (s/def Cliente {:nome s/Str, :cpf s/Str, :email s/Str, :cartao Cartao})
 
+(s/def ResumoCategoria {:categoria s/Str, :valor s/Num})
+
 
 
 
