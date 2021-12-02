@@ -2,7 +2,7 @@
   (:use clojure.pprint)
   (:require [java-time :as time]))
 
-(def cliente01 {:id-cliente 1 :nome "Maria da Silva" :cpf "12356743565" :email "maria@gmal.com"
+(def cliente01 {:nome "Maria da Silva" :cpf "12356743565" :email "maria@gmal.com"
                 :cartao     {:numero  "1324567897643256" :cvv "123" :validade "03/2030" :limite 2000.00
                              :compras [{:data "01/11/2021" :valor 200.00 :estabelecimento "Extra super SA" :categoria "Alimentação"}
                                        {:data "23/09/2020" :valor 545.00 :estabelecimento "Extra super SA" :categoria "Saúde"}
@@ -33,7 +33,7 @@
        (calcula-gastos-totais-por-categoria)
        (pprint)))
 
-(agrupa-por-categoria cliente01)
+;(agrupa-por-categoria cliente01)
 
 ;FATURA DO MES
 (defn mes-desejado? [compra periodo]
@@ -70,7 +70,7 @@
       (pprint))
   )
 
-(busca-compras cliente01 545M)
+;(busca-compras cliente01 545M)
 
 
 
