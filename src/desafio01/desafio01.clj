@@ -1,4 +1,4 @@
-(ns desafio01.principal
+(ns desafio01.desafio01
   (:use clojure.pprint)
   (:require [java-time :as time]))
 
