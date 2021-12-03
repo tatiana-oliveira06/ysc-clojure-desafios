@@ -4,6 +4,8 @@
             [schema.core :as s]
             [desafio01.model :as d.model]))
 
+(s/set-fn-validation! true)
+
 ;OBTER COMPRAS
 (defn obter-compras [cliente]
   (-> cliente
@@ -56,13 +58,16 @@
     (filter #(corresponde? % filtro) compras)))
 
 
+;ADICIONAR COMPRA
 
+(s/defn compra-repetida?
+  [compra :- d.model/Compra, cliente :- d.model/Cliente]
+  (some #(= compra %) (obter-compras cliente)))
 
-
-
-
-
-
-
+(s/defn adiciona-compra :- d.model/Cliente
+  [cliente :- d.model/Cliente, compra :- d.model/Compra]
+  (if (compra-repetida? compra cliente)
+    cliente
+    (update-in cliente [:cartao :compras] conj compra)))
 
 
