@@ -3,6 +3,7 @@
 
 (s/def PosNum (s/pred #(or (pos? %) (zero? %))))
 
+
 (s/def Compra {:data s/Str, :valor PosNum, :estabelecimento s/Str, :categoria s/Str })
 
 (s/def Cartao {:numero s/Str, :cvv s/Str, :validade s/Str, :limite s/Num, :compras [Compra]})
